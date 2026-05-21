@@ -41,6 +41,9 @@ cd ../Frontend && npm start  # Frontend :3000
 
 **Layer 6: Web Intelligence** — For reputation-sensitive emails (complaints, churn threats), we scrape G2/Trustpilot scores asynchronously. Results are cached for 6 hours. If scraping fails, the agent still works fine—just without the market data.
 
+## System Architecture Diagram
+<img width="1536" height="1024" alt="system_architecture_diagram" src="https://github.com/user-attachments/assets/4297a107-280f-4a18-86b8-282d25ec87b3" />
+
 ## Special Scenarios
 
 **GDPR Data Request** — Detects legal keywords (GDPR, Article 20, data portability). Immediately flags for legal team, creates a compliance ticket with the 30-day deadline. NEVER auto-replies with a generic response. The system knows this is a legal obligation.
