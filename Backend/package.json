@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+    "seed": "node src/scripts/seed-demo.js",
+    "seed-kb": "node src/scripts/seed-kb.js",
+    "seed-emails": "node src/scripts/seed-emails.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@prisma/client": "^7.8.0",
+    "axios": "^1.6.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "groq-sdk": "^1.2.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
+    "openai": "^6.38.0",
+    "pg": "^8.21.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prisma": "^7.8.0"
+  }
+}

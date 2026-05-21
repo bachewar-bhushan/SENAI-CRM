@@ -1,0 +1,185 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+:root {
+  --text: #4b5563;
+  --text-h: #111827;
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --panel-strong: #ffffff;
+  --border: #e5e7eb;
+  --code-bg: #f3f4f6;
+  --accent: #1877f2;
+  --accent-bg: rgba(24, 119, 242, 0.1);
+  --accent-border: rgba(24, 119, 242, 0.3);
+  --shadow: 0 8px 24px rgba(17, 24, 39, 0.06), 0 2px 8px rgba(17, 24, 39, 0.03);
+
+  --sans: 'Manrope', 'SF Pro Text', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --heading: 'Plus Jakarta Sans', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  font: 16px/1.5 var(--sans);
+  letter-spacing: 0.3px;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 15px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(24, 119, 242, 0.05), transparent 30%),
+    radial-gradient(circle at 90% 0%, rgba(59, 130, 246, 0.04), transparent 28%),
+    linear-gradient(180deg, #fbfdff 0%, #f8fafc 100%);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 1.3;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+code {
+  font-family: var(--mono);
+  display: inline;
+  border-radius: 4px;
+  padding: 2px 6px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  font-size: 0.875rem;
+}
+
+pre {
+  background: var(--code-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button, input, textarea, select {
+  transition: all 0.2s ease;
+}
+
+@layer components {
+  .app-shell {
+    min-height: 100vh;
+    padding: 1rem;
+  }
+
+  .app-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .glass-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    padding: 1.5rem;
+  }
+}
